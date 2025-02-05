@@ -1,0 +1,168 @@
+/* Overlay Background */
+.login-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+/* Popup Container */
+.login-popup-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Title Section */
+.login-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-popup-title h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: tomato;
+    font-weight: bold;
+}
+
+.login-popup-title img {
+    width: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.2s;
+}
+
+.login-popup-title img:hover {
+    transform: rotate(90deg);
+    opacity: 0.7;
+}
+
+/* Input Group */
+.login-popup-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.input-field label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #444;
+    font: bold;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s ease-in-out, box-shadow 0.2s;
+}
+
+.input-field input:focus {
+    border: 1px solid tomato;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(255, 99, 71, 0.5);
+}
+
+/* Button */
+button {
+    background: tomato;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+button:hover {
+    background: #e64528;
+    transform: scale(1.03);
+}
+
+/* Terms & Conditions */
+.login-popup-condition {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.login-popup-condition input {
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.login-popup-condition p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.login-popup-condition a {
+    color: tomato;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.login-popup-condition a:hover {
+    text-decoration: underline;
+    color: #e64528;
+}
+
+/* Toggle Between Login & Sign Up */
+p {
+    font-size: 0.95rem;
+    text-align: center;
+    color: #333;
+    margin: 0.5rem 0 0;
+}
+
+p span {
+    color: tomato;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    text-decoration: underline;
+}
+
+p span:hover {
+    color: #e64528;
+}

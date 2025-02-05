@@ -3,9 +3,10 @@ import './Navbar.css'
 import logo from '../../assets/logo.png'
 import search from '../../assets/search_icon.png'
 import basket from '../../assets/basket_icon.png'
+import { Link } from 'react-router-dom'
 
 
-export default function Navbar() {
+export default function Navbar({ setShowLogin }) {
 
     const [menu, setMenu] = useState("home");
 
@@ -13,10 +14,10 @@ export default function Navbar() {
         <div className='navbar'>
             <img src={logo} alt="" className='navbar-logo' />
             <ul className='nav-menu'>
-                <li onClick={() => setMenu("home")} className={menu==="home" ? "active" : ""}>Home</li>
-                <li onClick={() => setMenu("menu")} className={menu==="menu" ? "active" : ""}>Menu</li>
-                <li onClick={() => setMenu("mobile-app")} className={menu==="mobile-app" ? "active" : ""}>Mobile App</li>
-                <li onClick={() => setMenu("contact-us")} className={menu==="contact-us" ? "active" : ""}>Contact Us</li>
+                <Link to="/" onClick={() => setMenu("home")} className={menu==="home" ? "active" : ""}>Home</Link>
+                <a href='#explore-Menu' onClick={() => setMenu("menu")} className={menu==="menu" ? "active" : ""}>Menu</a>
+                <a href='#app-download' onClick={() => setMenu("mobile-app")} className={menu==="mobile-app" ? "active" : ""}>Mobile App</a>
+                <a href='#footer' onClick={() => setMenu("contact-us")} className={menu==="contact-us" ? "active" : ""}>Contact Us</a>
             </ul>
             <div className="navbar-right">
                 <img src={search} alt="" />
@@ -24,7 +25,7 @@ export default function Navbar() {
                     <img src={basket} alt="" />
                     <div className="dot"></div>
                 </div>
-                <button>Sign In</button>
+                <button onClick={() => setShowLogin(true)}>Sign In</button>
 
             </div>
         </div>

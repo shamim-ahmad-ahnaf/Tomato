@@ -1,0 +1,98 @@
+/* Register page styling */
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+  }
+  
+  .register-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: tomato; /* Main color */
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .input-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-group label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #555;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+  }
+  
+  .input-group input:focus {
+    border-color: tomato;
+    outline: none;
+    background-color: #fff;
+  }
+  
+  .input-group input::placeholder {
+    color: #bbb;
+  }
+  
+  .register-button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .register-button:hover {
+    background-color: #d9534f;
+  }
+  
+  .register-button:active {
+    background-color: #c9302c;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    .register-container {
+      padding: 1.5rem;
+    }
+  
+    .register-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .input-group input {
+      padding: 0.7rem;
+    }
+  
+    .register-button {
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+  }
+  
