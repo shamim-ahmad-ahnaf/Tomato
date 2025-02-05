@@ -1,0 +1,28 @@
+
+.food-desplay {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    max-width: 1200px;
+    padding: 2rem 0; 
+    margin: 0 auto;
+ }
+ 
+ .food-desplay h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+ }
+ 
+ .food-list { 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    row-gap: 50px;
+ }
+
+ 
+ 
