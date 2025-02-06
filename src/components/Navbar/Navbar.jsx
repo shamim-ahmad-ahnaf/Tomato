@@ -12,7 +12,7 @@ export default function Navbar({ setShowLogin }) {
 
     return (
         <div className='navbar'>
-            <img src={logo} alt="" className='navbar-logo' />
+           <Link to="/"><img src={logo} alt="" className='navbar-logo' /></Link>
             <ul className='nav-menu'>
                 <Link to="/" onClick={() => setMenu("home")} className={menu==="home" ? "active" : ""}>Home</Link>
                 <a href='#explore-Menu' onClick={() => setMenu("menu")} className={menu==="menu" ? "active" : ""}>Menu</a>
@@ -22,7 +22,7 @@ export default function Navbar({ setShowLogin }) {
             <div className="navbar-right">
                 <img src={search} alt="" />
                 <div className="navbar-search-icon">
-                    <img src={basket} alt="" />
+                  <Link to="/cart"><img src={basket} alt="" /></Link>
                     <div className="dot"></div>
                 </div>
                 <button onClick={() => setShowLogin(true)}>Sign In</button>
