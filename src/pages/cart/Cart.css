@@ -95,13 +95,25 @@ button:hover {
     gap: 12px;
     margin-top: 15px;
 }
+.car-promocode-input {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
 
 .car-promocode-input input {
-    width: 75%;
+    flex: 1; 
+    margin-top: 10px;
     padding: 12px;
     border-radius: 8px;
     border: 1px solid #ddd;
     font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.car-promocode-input input:focus {
+    border-color: #ff6600; 
+    outline: none;
 }
 
 .car-promocode-input button {
@@ -111,8 +123,14 @@ button:hover {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
+
+.car-promocode-input button:hover {
+    background-color: #45a049;
+}
+
 
 .car-promocode-input button:hover {
     background-color: green;

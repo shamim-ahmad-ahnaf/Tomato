@@ -69,9 +69,9 @@ export default function Cart() {
         <div>
           <span>Total: </span><span>${total.toFixed(2)}</span>
         </div>
-        <button onClick={() =>navigate('/order')}>PROCEED TO CHECKOUT</button>
+        <button onClick={() =>navigate('/placeOrder')}>PROCEED TO CHECKOUT</button>
       </div>
-
+      
       <div className="cart-promocode">
         <p>If you have a promo code, enter it here:</p>
         <div className="car-promocode-input">

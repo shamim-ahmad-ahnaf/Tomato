@@ -1,15 +1,33 @@
-import React, { useContext } from 'react'
-import './PlaceOrder.css'
+import React, { useContext, useState } from 'react';
+import './PlaceOrder.css';
 import { StoreContext } from '../../components/context/StoreContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function PlaceOrder() {
 
-  const {getTotalCartAmount} = useContext(StoreContext);
+  const { cartItems, food_list } = useContext(StoreContext);
+  const [promoCode, setPromoCode] = useState('');
+  const navigate = useNavigate();
+
+  // Calculate subtotal
+  const subtotal = food_list.reduce((total, item) => {
+    return total + (cartItems[item._id] > 0 ? item.price * cartItems[item._id] : 0);
+  }, 0);
+
+  // Set delivery fee and calculate total
+  const deliveryFee = 5.99;
+  const total = subtotal + deliveryFee;
+
+  // Handle promo code
+  const handlePromoSubmit = () => {
+    alert(`Promo code ${promoCode} applied!`);
+  };
 
   return (
     <form className='place-order'>
       <div className="place-order-left">
         <p>Delivery information</p>
+        {/* Delivery Info Fields */}
         <div className="multi-fields">
           <input type="text" placeholder='First Name' />
           <input type="text" placeholder='Last Name' />
@@ -26,34 +44,22 @@ export default function PlaceOrder() {
         </div>
         <input type="tel" placeholder='Phone' />
       </div>
-      <div className="place-order-right">
-      <div className="cart-total">
-        <div>
-          <span>Subtotal: </span><p>${getTotalCartAmount()}</p>
-        </div>
-        <div>
-          <span>Delivery Fee: </span><span>${deliveryFee.toFixed(2)}</span>
-        </div>
-        <hr />
-        <div>
-          <span>Total: </span><span>${total.toFixed(2)}</span>
-        </div>
-        <button>PROCEED TO PAYMENT</button>
-      </div>
 
-      <div className="cart-promocode">
-        <p>If you have a promo code, enter it here:</p>
-        <div className="car-promocode-input">
-          <input 
-            type="text" 
-            placeholder="Promo code" 
-            value={promoCode} 
-            onChange={(e) => setPromoCode(e.target.value)} 
-          />
-          <button onClick={handlePromoSubmit}>Submit</button>
+      <div className="place-order-right">
+        <div className="cart-total">
+          <div>
+            <span>Subtotal: </span><span>${subtotal.toFixed(2)}</span>
+          </div>
+          <div>
+            <span>Delivery Fee: </span><span>${deliveryFee.toFixed(2)}</span>
+          </div>
+          <hr />
+          <div>
+            <span>Total: </span><span>${total.toFixed(2)}</span>
+          </div>
+          <button onClick={() => navigate('/placeOrder')}>PROCEED TO CHECKOUT</button>
         </div>
-      </div>
       </div>
     </form>
-  )
+  );
 }
